@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Windows;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -15,14 +14,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Animator animator;
+    [SerializeField] private string IsWalking = "IsWalking";
 
     void Update()
     {
-        if (Input.GetAxisRaw("Horizontal"))
+        if (Input.GetAxisRaw("Horizontal") != 0)
         {
-            animator.SetTrigger("isWalking");
+            animator.SetTrigger("IsWalking");
         }
-        horizontal = Input.GetAxisRaw("Horizontal");
+        else
+        {
+            animator.SetTrigger("StopWalking");
+        }
+
+            horizontal = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
