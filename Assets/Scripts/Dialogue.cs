@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
+using static UnityEngine.GameObject;
 
 public class Dialogue : MonoBehaviour
 {

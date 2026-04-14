@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform feetPosition;
     public float groundCheckCircle;
     Animator animator;
+
 
 
     private void Start()
@@ -71,7 +73,13 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-
+    public void knockbackPlayer (Vector2 knockbackForce, int direction)
+    {
+        knockbackForce.x *= direction;
+        playerRb.linearVelocity = Vector2.zero;
+        playerRb.angularVelocity = 0f;
+        playerRb.AddForce(knockbackForce, ForceMode2D.Impulse);
+    }
 
 
 
