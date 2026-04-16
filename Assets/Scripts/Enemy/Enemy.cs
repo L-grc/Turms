@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float knockbackDelayToSelf = 1.5f;
 
+    [SerializeField]
+    private int damage = 3; 
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,6 +27,7 @@ public class Enemy : MonoBehaviour
     {
         int direction = GetDirection(playerTransform);
         Object.FindFirstObjectByType<PlayerMovement>().knockbackPlayer(knockbackToPlayer, direction);
+        Object.FindFirstObjectByType<PlayerHealth>().DamagePlayer(damage);
         GetComponent<EnemyMouvement>().knockbackEnemy(knockbackToSelf, -direction, knockbackDelayToSelf);
 
     }

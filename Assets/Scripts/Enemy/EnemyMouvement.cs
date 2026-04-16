@@ -24,7 +24,8 @@ public class EnemyMouvement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        rigidBody = GetComponent<Rigidbody2D>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
         halfWidth = spriteRenderer.bounds.extents.x;
         currentDirection = startDirection;
         spriteRenderer.flipX = startDirection == 1 ? false : true;
