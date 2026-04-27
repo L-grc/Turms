@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   health: 10
+  animator: {fileID: 791400081875371593}
 --- !u!1 &4575383370428066280
 GameObject:
   m_ObjectHideFlags: 0
