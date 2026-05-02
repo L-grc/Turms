@@ -21,7 +21,7 @@ public class HUD : MonoBehaviour
     private void OnEnable()
     {
         GameController.OnPlayerSpawned += SetupHealthbar;   
-        PlayerHealth.OnPlayerTakeDamage += UpdateHealthbar;
+        PlayerHealth.OnPlayerHealthChanged += UpdateHealthbar;
     }
 
     private void UpdateHealthbar(int currentHealth)
@@ -34,7 +34,7 @@ public class HUD : MonoBehaviour
     private void OnDisable()
     {
         GameController.OnPlayerSpawned -= SetupHealthbar;
-        PlayerHealth.OnPlayerTakeDamage -= UpdateHealthbar;
+        PlayerHealth.OnPlayerHealthChanged -= UpdateHealthbar;
     }
 
 

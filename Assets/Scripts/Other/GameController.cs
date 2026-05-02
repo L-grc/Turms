@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using System;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class GameController : MonoBehaviour
 {
+
+    private string saveLocation;
+
 
     [SerializeField]
     private GameObject playerPrefab;
@@ -28,7 +32,11 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        LoadGame();
+
         OnPlayerSpawned?.Invoke(player);
+        saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
+
     }
 
    private void ResetScene()
@@ -55,5 +63,32 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    public void SaveGame()
+    {
+        SaveData saveData = new SaveData
+        {
+            playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position,
+
+        };
+
+        File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
+    }
+
+    public void LoadGame()
+    {
+        if (File.Exists(saveLocation))
+        {
+            SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
+            GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerPosition;
+
+
+        }
+        else
+        {
+            SaveGame();
+        }
+
+    }
 
 }

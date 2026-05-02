@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using JetBrains.Annotations;
 
 
 public class PlayerHealth : MonoBehaviour
@@ -14,7 +15,8 @@ public class PlayerHealth : MonoBehaviour
 
     public int currentHealth {  get; private set; }
     public int maxHealth { get; private set; }
-    public static Action<int> OnPlayerTakeDamage; 
+    public static Action<int> OnPlayerHealthChanged;
+    public static Action<int> OnPlayerRestoreHealth;
     public static Action OnPlayerDie;
     private const string flashRedAnim = "FlashRed";
 
@@ -33,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
     public void DamagePlayer(int damageAmount)
     {
         currentHealth -= damageAmount;
-        OnPlayerTakeDamage?.Invoke(currentHealth);
+        OnPlayerHealthChanged?.Invoke(currentHealth);
         animator.SetTrigger(flashRedAnim);
 
         if(currentHealth <= 0)
@@ -44,5 +46,23 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
+    private void RestoreHealth(int healthRestored)
+    {
+        currentHealth += healthRestored;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        OnPlayerHealthChanged?.Invoke(currentHealth);
 
+    }
+
+
+    private void OnEnable()
+    {
+        Healing.OnFruitCollected += RestoreHealth;
+    }
+
+
+    private void OnDisable()
+    {
+        Healing.OnFruitCollected -= RestoreHealth;
+    }
 }

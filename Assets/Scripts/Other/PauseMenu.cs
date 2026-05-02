@@ -6,21 +6,21 @@ public class PauseMenu : MonoBehaviour
 {
 
     private bool isPaused;
-    public GameObject pausePanel;
+    public GameObject menuCanvas;
     
 
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+  
     void Start()
     {
         
-       
+       menuCanvas.SetActive(false);
 
 
     }
 
-    // Update is called once per frame
+  
     void Update()
     {
         
@@ -41,7 +41,7 @@ public class PauseMenu : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
-        pausePanel.SetActive(true);
+        menuCanvas.SetActive(true);
         isPaused = true;
         
 
@@ -52,7 +52,7 @@ public class PauseMenu : MonoBehaviour
     {
 
         Time.timeScale = 1;
-        pausePanel.SetActive(false);
+        menuCanvas.SetActive(false);
         isPaused = false;
 
 
