@@ -6,6 +6,7 @@ using UnityEditor.U2D.Aseprite;
 using UnityEngine.SceneManagement;
 using System.IO;
 
+
 public class GameController : MonoBehaviour
 {
 
@@ -23,9 +24,10 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         player = Instantiate(playerPrefab); 
-
-
     }
+
+    
+
 
 
 
@@ -90,5 +92,18 @@ public class GameController : MonoBehaviour
         }
 
     }
+
+
+
+
+    
+    public void OnExitClick()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+        Application.Quit();
+    }
+
 
 }
