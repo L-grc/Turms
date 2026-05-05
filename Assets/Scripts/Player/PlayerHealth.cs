@@ -13,10 +13,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private Animator animator; 
 
-    public int currentHealth {  get; private set; }
-    public int maxHealth { get; private set; }
-    public static Action<int> OnPlayerHealthChanged;
-    public static Action<int> OnPlayerRestoreHealth;
+    public float CurrentHealth {  get; private set; }
+    public float MaxHealth { get; private set; }
+    public static Action<float> OnPlayerHealthChanged;
+    public static Action<float> OnPlayerRestoreHealth;
     public static Action OnPlayerDie;
     private const string flashRedAnim = "FlashRed";
 
@@ -24,21 +24,21 @@ public class PlayerHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        currentHealth = health;
-        maxHealth = health;
+        CurrentHealth = health;
+        MaxHealth = health;
 
 
 
 
     }
 
-    public void DamagePlayer(int damageAmount)
+    public void DamagePlayer(float damageAmount)
     {
-        currentHealth -= damageAmount;
-        OnPlayerHealthChanged?.Invoke(currentHealth);
+        CurrentHealth -= damageAmount;
+        OnPlayerHealthChanged?.Invoke(CurrentHealth);
         animator.SetTrigger(flashRedAnim);
 
-        if(currentHealth <= 0)
+        if(CurrentHealth <= 0)
         {
             OnPlayerDie.Invoke();
             Destroy(gameObject);
@@ -46,11 +46,11 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    private void RestoreHealth(int healthRestored)
+    private void RestoreHealth(float healthRestored)
     {
-        currentHealth += healthRestored;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        OnPlayerHealthChanged?.Invoke(currentHealth);
+        CurrentHealth += healthRestored;
+        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
+        OnPlayerHealthChanged?.Invoke(CurrentHealth);
 
     }
 

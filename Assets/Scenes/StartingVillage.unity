@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 396633893}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: SaveGame
         m_Mode: 1
@@ -252,6 +252,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58963710}
   m_CullTransparentMesh: 1
+--- !u!1 &165918697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 165918698}
+  - component: {fileID: 165918699}
+  m_Layer: 0
+  m_Name: ItemDictionary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &165918698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165918697}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 396633894}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &165918699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165918697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be38e1c1a51c59e439425b70e18322b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  itemPrefabs:
+  - {fileID: -1319432163882137246, guid: b9cfcecae789d91429294dec2bebb403, type: 3}
+  - {fileID: 8317008207130009093, guid: 75f5df9b0756d1c4f884241050172c2d, type: 3}
+  - {fileID: 323673272296471043, guid: 049ecd8237f9cc64f80f1f465033629c, type: 3}
 --- !u!1 &188922525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,7 +2241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b439067c272a842439fda2f796bc1b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
-  playerPrefab: {fileID: 0}
+  playerPrefab: {fileID: 227735271412636827, guid: 5a06d1e4d728844488fcfd98bda3876e, type: 3}
 --- !u!1 &369598860
 GameObject:
   m_ObjectHideFlags: 0
@@ -2474,9 +2522,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 396633894}
-  - component: {fileID: 396633893}
   - component: {fileID: 396633892}
   - component: {fileID: 396633895}
+  - component: {fileID: 396633896}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -2497,19 +2545,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameController
   playerPrefab: {fileID: 227735271412636827, guid: 5a06d1e4d728844488fcfd98bda3876e, type: 3}
---- !u!114 &396633893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396633891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b439067c272a842439fda2f796bc1b9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameController
-  playerPrefab: {fileID: 0}
 --- !u!4 &396633894
 Transform:
   m_ObjectHideFlags: 0
@@ -2522,7 +2557,8 @@ Transform:
   m_LocalPosition: {x: 3.08, y: 0.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 165918698}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &396633895
@@ -2544,6 +2580,19 @@ MonoBehaviour:
   - {fileID: 7071499966951158466, guid: 75f5df9b0756d1c4f884241050172c2d, type: 3}
   - {fileID: 9005121550388946341, guid: b9cfcecae789d91429294dec2bebb403, type: 3}
   - {fileID: 1528156264154371780, guid: 049ecd8237f9cc64f80f1f465033629c, type: 3}
+--- !u!114 &396633896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396633891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 586b0cb6b0be77a4d9ae91deb3c67dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playerPrefab: {fileID: 227735271412636827, guid: 5a06d1e4d728844488fcfd98bda3876e, type: 3}
 --- !u!1 &525394688
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,9 +2792,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 0.814
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5065,10 +5114,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd92d73220190e47adca5da90a511a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMouvement
-  rigidBody: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  rigidBody: {fileID: 1695234168}
+  spriteRenderer: {fileID: 1695234169}
   speed: 3
   startDirection: 1
+--- !u!50 &1695234168 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3739320283136004877, guid: 2a258f1bbdc9442459da5b9bd32d5e96, type: 3}
+  m_PrefabInstance: {fileID: 5196580296088437450}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1695234169 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5319028612691891647, guid: 2a258f1bbdc9442459da5b9bd32d5e96, type: 3}
+  m_PrefabInstance: {fileID: 5196580296088437450}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1776278607
 GameObject:
   m_ObjectHideFlags: 0
@@ -7541,6 +7600,10 @@ PrefabInstance:
     - target: {fileID: 4558089305488331529, guid: 2a258f1bbdc9442459da5b9bd32d5e96, type: 3}
       propertyPath: m_Name
       value: "Flamm\xE8che"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519610527939491849, guid: 2a258f1bbdc9442459da5b9bd32d5e96, type: 3}
+      propertyPath: damage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8333959201106826257, guid: 2a258f1bbdc9442459da5b9bd32d5e96, type: 3}
       propertyPath: m_LocalPosition.x

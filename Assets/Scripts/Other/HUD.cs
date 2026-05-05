@@ -10,12 +10,14 @@ public class HUD : MonoBehaviour
     [SerializeField]
     private Slider healthbar;
 
-    private int maxHealth;
+    private float maxHealth;
 
     private void SetupHealthbar(GameObject player)
     {
-        healthbar.value = healthbar.maxValue;
-        maxHealth = player.GetComponent<PlayerHealth>().maxHealth;
+        
+        maxHealth = player.GetComponent<PlayerHealth>().MaxHealth;
+        healthbar.maxValue = maxHealth;
+        healthbar.value = maxHealth;
     }
 
     private void OnEnable()
@@ -24,10 +26,10 @@ public class HUD : MonoBehaviour
         PlayerHealth.OnPlayerHealthChanged += UpdateHealthbar;
     }
 
-    private void UpdateHealthbar(int currentHealth)
+    private void UpdateHealthbar(float currentHealth)
     {
-        healthbar.value = (float)currentHealth / maxHealth;
-        healthbar.value = Mathf.Clamp01(healthbar.value);
+        healthbar.value = currentHealth;
+      
     }
 
 

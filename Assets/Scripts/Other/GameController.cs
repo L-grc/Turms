@@ -1,8 +1,7 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+
 using System;
-using UnityEditor.U2D.Aseprite;
+
 using UnityEngine.SceneManagement;
 using System.IO;
 
@@ -11,6 +10,7 @@ public class GameController : MonoBehaviour
 {
 
     private string saveLocation;
+    private InventoryController inventoryController;
 
 
     [SerializeField]
@@ -18,15 +18,15 @@ public class GameController : MonoBehaviour
 
     private GameObject player;
     public static Action<GameObject> OnPlayerSpawned;
-    
 
 
-    private void Awake()
-    {
-        player = Instantiate(playerPrefab); 
-    }
 
-    
+    //private void Awake()
+    //{
+    //    player = Instantiate(playerPrefab); 
+    //}
+
+
 
 
 
@@ -38,6 +38,7 @@ public class GameController : MonoBehaviour
 
         OnPlayerSpawned?.Invoke(player);
         saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
+        inventoryController = FindAnyObjectByType<InventoryController>();
 
     }
 
@@ -71,7 +72,7 @@ public class GameController : MonoBehaviour
         SaveData saveData = new SaveData
         {
             playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position,
-
+            InventorySaveData = inventoryController.GetInventoryItems()
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
@@ -83,7 +84,7 @@ public class GameController : MonoBehaviour
         {
             SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
             GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerPosition;
-
+            inventoryController.SetInventoryItems(saveData.InventorySaveData);
 
         }
         else

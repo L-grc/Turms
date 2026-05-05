@@ -8,7 +8,7 @@ public class Healing : MonoBehaviour
     [SerializeField] 
     private int healthRecovered = 2;
 
-    public static Action<int> OnFruitCollected;
+    public static Action<float> OnFruitCollected;
 
 
 

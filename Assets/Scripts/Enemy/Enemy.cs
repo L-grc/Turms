@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     private float knockbackDelayToSelf = 1.5f;
 
     [SerializeField]
-    private int damage = 3; 
+    private int damage = 1; 
 
 
 
