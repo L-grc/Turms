@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 
@@ -15,7 +16,7 @@ public class InventoryController : MonoBehaviour
     public GameObject slotPrefab;
     public int slotCount;
     public GameObject[] itemPrefabs;
-   
+    public GameObject newItem;
 
     void Start()
     {
@@ -38,6 +39,9 @@ public class InventoryController : MonoBehaviour
 
     public bool AddItem(GameObject itemPrefab)
     {
+
+
+
         foreach (Transform slottransform in inventoryPanel.transform)
         {
             Slot slot = slottransform.GetComponent<Slot>();

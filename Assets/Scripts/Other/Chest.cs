@@ -41,15 +41,16 @@ public class Chest : MonoBehaviour, IInteractable
         if (itemPrefab)
         {
             GameObject droppedItem = Instantiate(itemPrefab, transform.position + Vector3.up, Quaternion.identity);
-
+            Debug.Log("droppedItem");
         }
+        
     }
 
 
     public void SetOpened(bool opened)
     {
         IsOpened = opened;
-        if (IsOpened = opened)
+        if (IsOpened == opened)
         {
             GetComponent<SpriteRenderer>().sprite = OpenedSprit;
 

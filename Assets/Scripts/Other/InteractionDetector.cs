@@ -12,8 +12,8 @@ public class InteractionDetector : MonoBehaviour
     void Start()
     {
        interactionIcon.SetActive(false);
-        interactionAction.action.started += OnInteracte;
-        interactionAction.action.canceled += OnInteracte;
+        interactionAction.action.performed += OnInteracte;
+        
     }
 
 
