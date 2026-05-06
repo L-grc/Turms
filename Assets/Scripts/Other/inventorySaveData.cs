@@ -3,7 +3,7 @@ using UnityEngine;
 [System.Serializable]
 
 
-public class InventorySaveData : MonoBehaviour
+public class InventorySaveData
 {
 
     public int itemID;
