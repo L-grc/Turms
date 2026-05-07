@@ -4359,6 +4359,7 @@ GameObject:
   - component: {fileID: 1110554094}
   - component: {fileID: 1110554093}
   - component: {fileID: 1110554097}
+  - component: {fileID: 1110554098}
   m_Layer: 9
   m_Name: Ovis
   m_TagString: Untagged
@@ -4536,6 +4537,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.81, y: 6.85}
   m_EdgeRadius: 0
+--- !u!114 &1110554098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110554092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64076fcfff426a046a8680ef983aca38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC
 --- !u!1 &1129313215
 GameObject:
   m_ObjectHideFlags: 0

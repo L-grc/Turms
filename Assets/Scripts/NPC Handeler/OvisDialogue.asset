@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38eea7c39b47d9a4f9eb63a28ef4a978, type: 3}
   m_Name: OvisDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcName: 
+  npcName: Ovis
   npcPortrait: {fileID: 0}
-  dialogueLines: []
+  dialogueLines:
+  - 'Oh ! Hello Mr. Boris. How good to see you.. '
+  - 'I''ve hear the news... '
+  - Congratulation..
+  autoProgressLines: 010101
   typingSpeed: 0.5
   voiceSound: {fileID: 0}
   voicePitch: 1
-  autoProgressLines: 
   autoProgressDeLay: 1.5
