@@ -1,0 +1,42 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Collections;
+
+
+public class DialogueController : MonoBehaviour
+{
+    public static DialogueController Instance { get; private set; }
+
+    public GameObject dialoguePanel;
+    public TMP_Text dialogueText, nameText;
+    public Image portraitImage;
+
+
+
+    
+    void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+
+    public void ShowDialogueUI(bool show)
+    {
+        dialoguePanel.SetActive(show);
+    }
+
+
+    public void SetNPCInfo(string npcName, Sprite portrait)
+    {
+        nameText.text = npcName;
+        portraitImage.sprite = portrait;
+    }
+
+    public void SetDialogueText(string text)
+    {
+            dialogueText.text = text;
+    }
+
+}

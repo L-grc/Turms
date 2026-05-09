@@ -14,4 +14,14 @@ public class NPCDialogue : ScriptableObject
 	public float voicePitch = 1f;
 	public float autoProgressDeLay = 1.5f;
 
+	public DialogueChoice[] choices;
+}
+
+[System.Serializable]
+
+public class DialogueChoice
+{
+	public int dialogueIndex;
+	public string[] choices;
+	public int[] nextDialogueIndexes;
 }

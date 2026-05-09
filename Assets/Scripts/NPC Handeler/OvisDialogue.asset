@@ -17,9 +17,18 @@ MonoBehaviour:
   dialogueLines:
   - 'Oh ! Hello Mr. Boris. How good to see you.. '
   - 'I''ve hear the news... '
-  - Congratulation..
+  - Congratulation.. You are very Brave !
+  - Since you are the new Message could you deliver this for me ?
+  - Thank you so much !
+  - Oh.. ok...
   autoProgressLines: 010101
   typingSpeed: 0.5
   voiceSound: {fileID: 0}
   voicePitch: 1
   autoProgressDeLay: 1.5
+  choices:
+  - dialogueIndex: 3
+    choices:
+    - For sur !
+    - Not right now.
+    nextDialogueIndexes: 0400000005000000
