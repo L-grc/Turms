@@ -21,8 +21,10 @@ MonoBehaviour:
   - Since you are the new Message could you deliver this for me ?
   - Thank you so much !
   - Oh.. ok...
-  autoProgressLines: 010101000101
-  endDialogueLines: 000000000101
+  - Be careful on the route
+  - Thank you so much !
+  autoProgressLines: 0101010001010101
+  endDialogueLines: 0000000001010101
   typingSpeed: 0.1
   voiceSound: {fileID: 0}
   voicePitch: 1
@@ -33,3 +35,7 @@ MonoBehaviour:
     - For sur !
     - Not right now.
     nextDialogueIndexes: 0400000005000000
+    givesQuest: 0100
+  questInProgressIndex: 6
+  questCompletedIndex: 7
+  quest: {fileID: 11400000, guid: 09b5082dfe6dd16488d8e77a3fa540ae, type: 2}

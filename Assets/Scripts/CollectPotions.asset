@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CollectPotions
   m_EditorClassIdentifier: Assembly-CSharp::Quest
   questID: fd03659e-23fe-48ca-9b50-4270071d933b
-  questName: CollectPotions
+  questName: Collect Lettres
   description: We need to collect 5 Lettres !
   objectives:
   - objectiveID: 1

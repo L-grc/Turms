@@ -2815,6 +2815,7 @@ GameObject:
   - component: {fileID: 396633896}
   - component: {fileID: 396633897}
   - component: {fileID: 396633898}
+  - component: {fileID: 396633899}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -2882,6 +2883,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f52f9c00090c941852c71d2e08b0d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &396633899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396633891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 874148d172b68054e8d970f833da79dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  activateQuests: []
 --- !u!1 &434751111
 GameObject:
   m_ObjectHideFlags: 0
@@ -4623,7 +4637,6 @@ GameObject:
   - component: {fileID: 978562745}
   - component: {fileID: 978562747}
   - component: {fileID: 978562746}
-  - component: {fileID: 978562748}
   m_Layer: 5
   m_Name: QuestPage
   m_TagString: Untagged
@@ -4690,18 +4703,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978562744}
   m_CullTransparentMesh: 1
---- !u!114 &978562748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 978562744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36530c6c68918454eb4a49841227938c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!1 &1038121015
 GameObject:
   m_ObjectHideFlags: 0
@@ -5718,9 +5719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   questListContent: {fileID: 238460314}
   questEntryPrefab: {fileID: 7112654963624447276, guid: d358dc65153173b4fa06a57b4a2cb737, type: 3}
-  objectivetextPrefab: {fileID: 4642637405934718856, guid: 27c459807643e9b40ad01c1fb8fc6df3, type: 3}
-  textQuest: {fileID: 11400000, guid: 09b5082dfe6dd16488d8e77a3fa540ae, type: 2}
-  testQuestAmount: 5
+  objectiveTextPrefab: {fileID: 0}
 --- !u!1 &1609792069
 GameObject:
   m_ObjectHideFlags: 0
