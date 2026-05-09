@@ -47,7 +47,7 @@ public class InteractionDetector : MonoBehaviour
 
     private void OnDisable()
     {
-        interactionAction.action.started -= OnInteracte;
-        interactionAction.action.canceled -= OnInteracte;
+        interactionAction.action.performed -= OnInteracte;
+        
     }
 }

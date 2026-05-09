@@ -36,6 +36,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
+        if (PauseController.IsGamePause)
+        {
+            playerRb.linearVelocity = Vector2.zero;
+
+        }
         //Direction
         input = Input.GetAxisRaw("Horizontal");
         if (input < 0)

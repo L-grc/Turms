@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 [CreateAssetMenu(fileName ="NewNPCDialogue", menuName = "NPC Dialogue")]
 
@@ -9,7 +11,8 @@ public class NPCDialogue : ScriptableObject
 	public Sprite npcPortrait; 
 	public string[] dialogueLines;
 	public bool[] autoProgressLines;
-	public float typingSpeed = 0.5f;
+	public bool[] endDialogueLines;
+	public float typingSpeed = 0.005f;
 	public AudioClip voiceSound;
 	public float voicePitch = 1f;
 	public float autoProgressDeLay = 1.5f;

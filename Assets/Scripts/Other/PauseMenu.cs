@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
 
-    private bool isPaused;
+    //private bool isPaused;
     public GameObject menuCanvas;
     
 
@@ -29,11 +29,13 @@ public class PauseMenu : MonoBehaviour
         
         if(Input.GetButtonDown("Pause"))
         {
-            if(isPaused)
-                ResumeGame();
-            else
-                PauseGame();
-                
+            if(!menuCanvas.activeSelf && PauseController.IsGamePause)
+            {
+                return;
+            }
+          menuCanvas.SetActive(!menuCanvas.activeSelf);
+            PauseController.SetPause(menuCanvas.activeSelf);
+
         }
 
 
@@ -46,25 +48,25 @@ public class PauseMenu : MonoBehaviour
   
 
 
-    public void PauseGame()
-    {
-        Time.timeScale = 0;
-        menuCanvas.SetActive(true);
-        isPaused = true;
+    //public void PauseGame()
+    //{
+    //    Time.timeScale = 0;
+    //    menuCanvas.SetActive(true);
+    //    isPaused = true;
         
 
 
-    }
+    //}
 
-    public void ResumeGame()
-    {
+    //public void ResumeGame()
+    //{
 
-        Time.timeScale = 1;
-        menuCanvas.SetActive(false);
-        isPaused = false;
+    //    Time.timeScale = 1;
+    //    menuCanvas.SetActive(false);
+    //    isPaused = false;
 
 
-    }
+    //}
 
 
 
