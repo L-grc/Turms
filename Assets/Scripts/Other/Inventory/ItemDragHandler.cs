@@ -12,7 +12,8 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     Transform originalParent;
     CanvasGroup canvasGroup;
 
-
+    
+    private InventoryController inventoryController;
 
 
 
@@ -20,7 +21,7 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     {
 
         canvasGroup = GetComponent<CanvasGroup>();
-
+        inventoryController = InventoryController.Instance;
 
     }
 
@@ -62,6 +63,8 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         
         
         Slot originalSlot = originalParent.GetComponent<Slot>();
+
+        
 
         if (dropSlot != null)
         {

@@ -6,8 +6,9 @@ public class PlayerItemCollector : MonoBehaviour
     private InventoryController inventoryController;
     void Start()
     {
-        
+
         inventoryController = FindAnyObjectByType<InventoryController>();
+        
 
     }
 

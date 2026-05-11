@@ -11,6 +11,6 @@ public class SaveData
     public Vector3 playerPosition;
     public string mapBoundary;
     public List<InventorySaveData> InventorySaveData; 
-
+    public List<QuestProgress> questProgressData;
 
 }
