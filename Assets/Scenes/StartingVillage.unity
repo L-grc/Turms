@@ -4786,7 +4786,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1163547227}
   m_Direction: 0
   m_Value: 1
-  m_Size: 1
+  m_Size: 0.9999998
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5524,7 +5524,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1083836093}
   m_HandleRect: {fileID: 1083836092}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5719,7 +5719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   questListContent: {fileID: 238460314}
   questEntryPrefab: {fileID: 7112654963624447276, guid: d358dc65153173b4fa06a57b4a2cb737, type: 3}
-  objectiveTextPrefab: {fileID: 0}
+  objectiveTextPrefab: {fileID: 4642637405934718856, guid: 27c459807643e9b40ad01c1fb8fc6df3, type: 3}
 --- !u!1 &1609792069
 GameObject:
   m_ObjectHideFlags: 0
