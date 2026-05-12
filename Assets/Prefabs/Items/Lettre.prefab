@@ -257,6 +257,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ID: 0
+  Name: Lettre
+  quantity: 1
 --- !u!212 &134640544295982240
 SpriteRenderer:
   serializedVersion: 2

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class Healing : MonoBehaviour
+public class Healing : MonoBehaviour, IInteractable
 {
 
 
@@ -11,12 +11,19 @@ public class Healing : MonoBehaviour
     [SerializeField] 
     private int healthRecovered = 2;
 
-    public static Action<float> OnFruitCollected;
+    public static Action<int> OnFruitCollected;
 
 
-    public void Collect()
-    {
-        OnFruitCollected.Invoke(healthRecovered);
-    }
    
+
+    public void Interact()
+    {
+        OnFruitCollected?.Invoke(healthRecovered);
+        Destroy(gameObject); 
+    }
+
+    public bool CanInteract()
+    {
+        return true;
+    }
 }

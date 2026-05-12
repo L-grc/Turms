@@ -23,8 +23,8 @@ MonoBehaviour:
   - Oh.. ok...
   - Be careful on the route
   - Thank you so much !
-  autoProgressLines: 0101010001010101
-  endDialogueLines: 0000000001010101
+  autoProgressLines: 0101010001010000
+  endDialogueLines: 0000000001010000
   typingSpeed: 0.1
   voiceSound: {fileID: 0}
   voicePitch: 1

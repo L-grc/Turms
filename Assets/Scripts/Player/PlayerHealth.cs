@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public float CurrentHealth {  get; private set; }
     public float MaxHealth { get; private set; }
     public static Action<float> OnPlayerHealthChanged;
-    public static Action<float> OnPlayerRestoreHealth;
+    public static Action<int> OnPlayerRestoreHealth;
     public static Action OnPlayerDie;
     private const string flashRedAnim = "FlashRed";
 
@@ -57,12 +57,22 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnEnable()
     {
-        Healing.OnFruitCollected += RestoreHealth;
+        Healing.OnFruitCollected += Heal;
     }
 
 
     private void OnDisable()
     {
-        Healing.OnFruitCollected -= RestoreHealth;
+        Healing.OnFruitCollected -= Heal;
     }
+
+    void Heal(int amount)
+    {
+        CurrentHealth += amount;
+
+        if(CurrentHealth > MaxHealth)
+            CurrentHealth = MaxHealth;
+        Debug.Log("Soin reçu :" + amount);
+    }
+
 }

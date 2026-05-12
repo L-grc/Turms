@@ -25,13 +25,7 @@ public class PlayerCollision : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Healing"))
-        {
-            other.GetComponent<Healing>().Collect();
-        }
-    }
+   
 
 
     // Update is called once per frame

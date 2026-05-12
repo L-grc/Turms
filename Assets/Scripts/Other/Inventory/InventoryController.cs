@@ -85,6 +85,7 @@ public class InventoryController : MonoBehaviour
     {
 
         Item itemToAdd = itemPrefab.GetComponent<Item>();
+        itemPrefab.transform.localScale = Vector3.one;
         if (itemToAdd == null) return false;
         
             
