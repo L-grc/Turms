@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     public static Action<int> OnPlayerRestoreHealth;
     public static Action OnPlayerDie;
     private const string flashRedAnim = "FlashRed";
+   
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
