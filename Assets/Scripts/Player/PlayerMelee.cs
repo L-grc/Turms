@@ -6,12 +6,12 @@ public class PlayerMelee : MonoBehaviour
 {
     public Transform attackOrigin;
     public float attackRadius = 1f;
-    public LayerMask enemyMask;
+    public LayerMask Enemy;
 
     public float cooldownTime = .5f;
     private float cooldownTimer = 0f;
 
-    public int attackDamage = 25;
+    public int damage = 25;
 
     public Animator animator;
 
@@ -19,15 +19,18 @@ public class PlayerMelee : MonoBehaviour
     {
         if (cooldownTimer <= 0)
         {
-            if (Input.GetKey(KeyCode.K))
+            if (Input.GetKeyDown(KeyCode.K))
             {
+              
                 // Example of playing attack animation
-               // animator.SetTrigger("Melee");
+                // animator.SetTrigger("Melee");
 
-                Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(attackOrigin.position, attackRadius, enemyMask);
-                foreach (var enemy in enemiesInRange)
+                Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(attackOrigin.position, attackRadius, Enemy);
+                
+                foreach (var Enemy in enemiesInRange)
                 {
-                    enemy.GetComponent<PlayerHealth>().DamagePlayer(attackDamage);
+                   
+                    Enemy.GetComponent<Enemy>().TakeDamage(damage);
                 }
 
                 cooldownTimer = cooldownTime;

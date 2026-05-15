@@ -14,9 +14,15 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private int damage = 1; 
 
-
+    float health, maxHealth = 4;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private void Start()
+    {
+        health = maxHealth;
+    }
+
     public void Die()
     {
         Destroy(gameObject);
@@ -46,7 +52,15 @@ public class Enemy : MonoBehaviour
 
     }
 
-
+    public void TakeDamage(int damage)
+    {
+        Debug.Log("Enemy touched");
+        health -= damage;
+        if(health <= 0)
+        {
+           Destroy(gameObject);
+        }
+    }
 
 
 }

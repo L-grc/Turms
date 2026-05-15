@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+
     private void Start()
     {
 
@@ -74,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
         playerRb.linearVelocity = new Vector2 (input * speed, playerRb.linearVelocity.y);
         animator.SetFloat("Speed", Mathf.Abs(input));
         animator.SetBool("isGrounded", isGrounded);
+
 
     }
 
