@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 352464524}
   - component: {fileID: 352464525}
   m_Layer: 5
-  m_Name: Healthbar
+  m_Name: healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3069,31 +3069,11 @@ Transform:
   - {fileID: 1052289561}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1296040395 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4558089305488331529, guid: 2a258f1bbdc9442459da5b9bd32d5e96, type: 3}
-  m_PrefabInstance: {fileID: 2093034877}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1296040402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8333959201106826257, guid: 2a258f1bbdc9442459da5b9bd32d5e96, type: 3}
   m_PrefabInstance: {fileID: 2093034877}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1296040403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296040395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bc96efc7073da84fbb4a9ed924c21d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthManager
-  maxHealth: 5
-  currentHealth: 0
-  healthBar: {fileID: 0}
 --- !u!1 &1338310625
 GameObject:
   m_ObjectHideFlags: 0
@@ -3443,7 +3423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9056265327609415204, guid: 43d2b84463736dd4faa434272981f81e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4235,7 +4215,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 25, y: -25}
-  m_SizeDelta: {x: 300, y: 100}
+  m_SizeDelta: {x: 100, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1832166919
 GameObject:
@@ -5020,6 +5000,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Flamm\xE8che"
       objectReference: {fileID: 0}
+    - target: {fileID: 5656687401796647980, guid: 2a258f1bbdc9442459da5b9bd32d5e96, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656687401796647980, guid: 2a258f1bbdc9442459da5b9bd32d5e96, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8333959201106826257, guid: 2a258f1bbdc9442459da5b9bd32d5e96, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.423958
@@ -5066,10 +5054,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8333959201106826257, guid: 2a258f1bbdc9442459da5b9bd32d5e96, type: 3}
       insertIndex: -1
       addedObject: {fileID: 229804923}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4558089305488331529, guid: 2a258f1bbdc9442459da5b9bd32d5e96, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1296040403}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a258f1bbdc9442459da5b9bd32d5e96, type: 3}
 --- !u!1 &2124549389
 GameObject:
